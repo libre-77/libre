@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="libre">
+  <!-- Plain app-tile mark: paper-on-brown lowercase "l" drawn as vector paths
+       (no font dependency) so it renders identically as favicon, PWA, and store
+       icon. Sharp, angular corners by design. -->
+  <rect width="64" height="64" fill="#5a3e2b"/>
+  <!-- lowercase "l": vertical stem + short baseline foot, optically centered -->
+  <rect x="24" y="13" width="9" height="32" fill="#f6f6ef"/>
+  <rect x="24" y="40" width="15" height="5" fill="#f6f6ef"/>
+</svg>

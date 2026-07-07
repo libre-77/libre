@@ -1,0 +1,7 @@
+# Replace relay.example.org with your relay's hostname. Caddy obtains and renews
+# a TLS certificate automatically, terminating HTTPS and upgrading WebSocket so
+# libre clients connect over wss://.
+
+relay.example.org {
+	reverse_proxy strfry:7777
+}

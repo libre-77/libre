@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Content-Security-Policy: lock code execution so relay-delivered content
+         cannot run as script (XSS defence-in-depth beyond the textContent-only
+         render rule). connect/img stay broad because relays and media hosts are
+         a user-editable, unbounded list; the real lock is script/object/base. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' https: data: blob:; connect-src 'self' https: wss: ws:; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'"
+    />
+    <title>libre</title>
+    <meta name="description" content="Decentralized, censorship-resistant communities on Nostr." />
+    <link rel="icon" href="/icon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <div id="app"><noscript>libre needs JavaScript to reach the relays.</noscript></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

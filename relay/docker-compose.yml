@@ -1,0 +1,40 @@
+# One-command libre relay: strfry (Nostr relay) behind Caddy (automatic HTTPS/WSS).
+# More independent relays = more censorship resistance. Run this on any VPS
+# OUTSIDE the target-censorship jurisdiction, point a domain at it, then add the
+# wss:// URL in libre → relays.
+#
+#   1. edit DOMAIN below (and relay/Caddyfile) to your hostname
+#   2. docker compose up -d
+#
+# Caddy fetches a TLS cert automatically, so clients get wss:// with no extra work.
+
+services:
+  strfry:
+    image: dockurr/strfry:latest
+    container_name: libre-strfry
+    restart: unless-stopped
+    stop_grace_period: 2m
+    volumes:
+      - strfry-db:/app/strfry-db
+      - ./strfry.conf:/etc/strfry.conf:ro
+    expose:
+      - "7777"
+
+  caddy:
+    image: caddy:2
+    container_name: libre-caddy
+    restart: unless-stopped
+    depends_on:
+      - strfry
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+volumes:
+  strfry-db:
+  caddy-data:
+  caddy-config:

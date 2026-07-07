@@ -1,0 +1,29 @@
+# Local NIP-72 reference (upstream andotherstuff/chorus). NOT part of libre and
+# NOT redistributed: consulted locally only. Keeps libre free of third-party
+# code and licensing entanglement. See NOTICE.
+reference/
+
+# Node tooling (build-time only; the app ships as static files).
+web/node_modules/
+node_modules/
+
+# Distribution build output (regenerate with `npm run build`).
+web/dist/
+
+# Secrets: never commit. Only .env.example (a placeholder) may be tracked.
+.env
+.env.*
+!.env.example
+
+# Debug captures (HAR exports contain traffic/identity noise, not part of libre)
+*.har
+
+# Browser-automation snapshots (playwright-cli scratch output, not part of libre)
+.playwright-cli/
+
+# OS / editor noise
+.DS_Store
+.omc/
+
+# Local TLS certs (dev https server): never commit private keys
+*.pem

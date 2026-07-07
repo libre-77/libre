@@ -1,0 +1,38 @@
+libre
+Copyright (C) 2026 libre contributors
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version. See the LICENSE file for the full text.
+
+--------------------------------------------------------------------------------
+Origin and third-party notes
+--------------------------------------------------------------------------------
+
+libre's client is original code written from scratch in vanilla JavaScript. It
+does NOT incorporate source code from any third-party application.
+
+NIP-72 event kinds, tag names, and the Nostr wire format used here are facts
+defined by the public Nostr protocol specifications (NIPs), not copyrightable
+material of any implementation.
+
+During development, the project andotherstuff/chorus (a React NIP-72 client) was
+consulted as a behavioral reference for NIP-72 flows. Its source is kept locally
+under reference/ for study only and is excluded from this repository's
+distribution (see .gitignore). No chorus source code is shipped in libre. If in
+the future any specific chorus code is ported, the MIT license notice for that
+code must be preserved alongside it, per that project's stated MIT licensing.
+
+--------------------------------------------------------------------------------
+Bundled dependency
+--------------------------------------------------------------------------------
+
+web/vendor/nostr-tools.js is a bundled build of nostr-tools
+(https://github.com/nbd-wtf/nostr-tools), MIT licensed, © nostr-tools authors.
+It is redistributed here under the terms of its MIT license.
+
+web/vendor/fonts/JetBrainsMono-{Regular,Bold}.woff2 are JetBrains Mono
+(https://github.com/JetBrains/JetBrainsMono), licensed under the SIL Open Font
+License 1.1, © JetBrains s.r.o. Redistributed here self-hosted under the terms
+of the OFL; no CDN or Google Fonts fetch is used.
